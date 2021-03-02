@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="./node_modules/web3/dist/web3.min.js">
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid justify-content-md-start">
+            <h1 style="font-size:60px ; color:white">FOOD STORE</h1>
+        </div>
+    </nav>
+    <div class="blog">
+        <div class="container-fluid p-3 text-dark">
+            <div class="row">
+                <div class="col">
+                    <center>
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/Friedrice.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">ข้าวผัด</h5>
+                                <button class="btn btn-warning" id="btnFood1" name="ข้าวผัด" value="Fried rice" style="background-color:red; border-color:red; color:white">0.0035 eth</button>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+
+                <div class="col">
+                    <center>
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/Congee.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">โจ๊ก</h5>
+                                <button class="btn btn-warning" id="btnFood2" name="โจ๊ก" value="Congee" style="background-color:red; border-color:red; color:white">0.0040 eth</button>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+
+                <div class="col">
+                    <center>
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/Wontonsoup.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">เกี้ยวน้ำ</h5>
+                                <button class="btn btn-warning" id="btnFood3" name="เกี้ยวน้ำ" value="Wonton soup" style="background-color:red; border-color:red; color:white">0.0045 eth</button>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+            <br><br>
+            <div class="row">
+                <div class="col">
+                    <center>
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/Latte.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Latte</h5>
+                                <button class="btn btn-warning" id="btnDrink1" name="Latte" value="Latte" style="background-color:red; border-color:red; color:white">0.0025 eth</button>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+
+                <div class="col">
+                    <center>
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/grape-juice.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Grape juice</h5>
+                                <button class="btn btn-warning" id="btnDrink2" name="Grape juice" value="Grape juice" style="background-color:red; border-color:red; color:white">0.0020 eth</button>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+
+                <div class="col">
+                    <center>
+                        <div class="card" style="width: 18rem;">
+                            <img src="img/lemonade.jfif" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Lemonade</h5>
+                                <button class="btn btn-warning" id="btnDrink3" name="Lemonade" value="Lemonade" style="background-color:red; border-color:red; color:white">0.0028 eth</button>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br><br>
+    <div class="container p-3 bg-" style="background-color:#5beca9  ;">
+        <div class="title">
+            <br>
+            <h1 style="font-size:40px ; color: rgb(55, 0, 255) ; text-align:center ">----- Order List Table -----</h1>
+            <br><br>
+        </div>
+        <center>
+            <table class="center" id="TableOrder" border="0" width="65%">
+                <tr>
+                    <td><label class="cafe">No.</label></td>
+                    <td><label class="cafe">Date/Time</label></td>
+                    <td><label class="cafe">Order</label></td>
+                    <td><label class="cafe">Customer Address</label></td>
+                </tr>
+            </table>
+        </center>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js">
+        </script>
+        <script>
+            function insertData(n, o) {
+                var name = n;
+                var address = o;
+                var dt = new Date();
+                document.getElementById("insertionPoint").innerHTML += "<tr><td>" + dt.toLocaleTimeString() + "</td><td>" + name + "</td><td>" + address + "</td><tr>";
+            }
+        </script>
+        <script>
+            if (typeof web3 !== 'undefined') {
+                // this statement is executed if you are using 
+                // MetaMask 
+                async function enableAccounts() {
+                    await ethereum.enable()
+                }
+                enableAccounts();
+            } else {
+                // set the provider you want from Web3.providers
+                web3 = new Web3(
+                    new Web3.providers.HttpProvider(
+                        "http://localhost:8545"));
+            }
+
+            let abi = [{
+                "constant": false,
+                "inputs": [{
+                    "name": "name",
+                    "type": "string"
+                }],
+                "name": "GetOrder",
+                "outputs": [],
+                "payable": true,
+                "stateMutability": "payable",
+                "type": "function"
+            }, {
+                "anonymous": false,
+                "inputs": [{
+                    "indexed": false,
+                    "name": "from",
+                    "type": "address"
+                }, {
+                    "indexed": false,
+                    "name": "text",
+                    "type": "string"
+                }, {
+                    "indexed": false,
+                    "name": "datetime",
+                    "type": "uint256"
+                }, {
+                    "indexed": false,
+                    "name": "hash",
+                    "type": "bytes32"
+                }],
+                "name": "OrderAdded",
+                "type": "event"
+            }, {
+                "anonymous": false,
+                "inputs": [{
+                    "indexed": false,
+                    "name": "from",
+                    "type": "address"
+                }, {
+                    "indexed": false,
+                    "name": "text",
+                    "type": "string"
+                }, {
+                    "indexed": false,
+                    "name": "reason",
+                    "type": "string"
+                }],
+                "name": "OrderError",
+                "type": "event"
+            }, {
+                "constant": true,
+                "inputs": [{
+                    "name": "index",
+                    "type": "uint256"
+                }],
+                "name": "getAddress",
+                "outputs": [{
+                    "name": "",
+                    "type": "address"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }, {
+                "constant": true,
+                "inputs": [{
+                    "name": "index",
+                    "type": "uint256"
+                }],
+                "name": "getName",
+                "outputs": [{
+                    "name": "",
+                    "type": "string"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }, {
+                "constant": true,
+                "inputs": [],
+                "name": "getOrderCount",
+                "outputs": [{
+                    "name": "",
+                    "type": "uint256"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }, {
+                "constant": true,
+                "inputs": [{
+                    "name": "index",
+                    "type": "uint256"
+                }],
+                "name": "getTimestamp",
+                "outputs": [{
+                    "name": "",
+                    "type": "uint256"
+                }],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function"
+            }];
+            var contract = web3.eth.contract(abi);
+            var myContract = contract.at(
+                '0x7FDc417A1F33c22A7CcA16E53934c0dbd108bcA3');
+
+            var completeEvent =
+                myContract.OrderAdded();
+
+            var refreshtable = false;
+
+            completeEvent.watch(function(error, result) {
+                if (!error) {
+                    if (result.args.from == web3.eth.defaultAccount) {
+                        $("#result").html("Order >> " + result.args.text);
+                        if (refreshtable == true) {
+                            insertData(result.args.text, result.args.from);
+                            refreshtable = false;
+                        }
+                    }
+                }
+            });
+
+            var errorEvent =
+                myContract.OrderError();
+
+            errorEvent.watch(function(error, result) {
+                if (!error) {
+                    if (result.args.from ==
+                        web3.eth.defaultAccount) {
+                        $("#result").html(
+                            "Error. <br/> Name: " +
+                            result.args.text +
+                            "<br/> Reason: " + result.args.reason);
+                    }
+                }
+            });
+            //-------food----------
+            //Fried rice 0.0035 eth
+            $("#btnFood1").click(function() {
+                SendOrder(3500000000000000, "Fried rice")
+            });
+
+            //Congee 0.0040 eth
+            $("#btnFood2").click(function() {
+                SendOrder(4000000000000000, "Congee")
+            });
+
+            //Wonton soup 0.0045  eth
+            $("#btnFood3").click(function() {
+                SendOrder(4500000000000000, "Wonton soup")
+            });
+            //-------end food----------
+
+            //-------drink---------
+            //Latte 0.0025 eth
+            $("#btnDrink1").click(function() {
+                SendOrder(2500000000000000, "Latte")
+            });
+
+            //Grape juice 0.0020
+            $("#btnDrink2").click(function() {
+                SendOrder(2000000000000000, "Grape juice")
+            });
+
+            //Lemonade 0.0028 eth
+            $("#btnDrink3").click(function() {
+                SendOrder(2800000000000000, "Lemonade")
+            });
+
+            //-------end drink---------
+
+            async function GetvalueOrder() {
+
+                var timestamp;
+                var ordername;
+                var owner;
+                var i = 0;
+
+                await ResetTable();
+                myContract.getOrderCount((error, result) => {
+                    if (!error) {
+                        setTimeout(function() {
+                            selectOrder(parseInt(result.toString()));
+                        }, 500);
+                    } else
+                        console.error(error);
+                });
+
+                function selectOrder(index) {
+                    if (index > 0) {
+                        myContract.getTimestamp(i, (error, result) => {
+                            if (!error) {
+                                timestamp = ConvertTimestamp(result);
+                                myContract.getName(i, (error, result) => {
+                                    if (!error) {
+                                        ordername = result.toString();
+                                        myContract.getAddress(i, (error, result) => {
+                                            if (!error) {
+                                                owner = result.toString();
+                                                if (i < index) {
+                                                    listOrder(timestamp, ordername, owner);
+                                                    i++;
+                                                    selectOrder(index);
+                                                }
+                                            } else
+                                                console.error(error);
+                                        });
+                                    } else
+                                        console.error(error);
+                                });
+                            } else
+                                console.error(error);
+                        });
+                    }
+                }
+
+            }
+
+            function SendOrder(value, ordername) {
+                refreshtable = true;
+                myContract.GetOrder(ordername, {
+                    gas: 300000,
+                    from: web3.eth.accounts[0],
+                    value: value
+                }, (error, result) => {
+                    $("#result").html("Order pending confirmation.....");
+                });
+            }
+
+            function listOrder(timestamp, ordername, owner, i) {
+                var queueOrder = document.getElementById("TableOrder");
+
+                var r_count = queueOrder.rows.length;
+                console.log("r_count");
+                console.log(r_count);
+                var row = queueOrder.insertRow(r_count);
+
+                row.insertCell(0).innerHTML = r_count;
+                row.insertCell(1).innerHTML = timestamp;
+                row.insertCell(2).innerHTML = ordername;
+                row.insertCell(3).innerHTML = owner;
+            }
+
+            function ResetTable() {
+                var queueOrder = document.getElementById("TableOrder");
+
+                while (queueOrder.rows.length > 1) {
+                    queueOrder.deleteRow(queueOrder.rows.length - 1);
+                }
+            }
+
+            function ConvertTimestamp(timestamp) {
+                var mon = ["January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                ];
+
+                var timeconvert = new Date(timestamp * 1000)
+
+                return (timeconvert.getDate().toString() + " " +
+                    mon[timeconvert.getMonth() + 1] + " " +
+                    timeconvert.getFullYear().toString() + "   " +
+                    (timeconvert.getHours() % 10 == timeconvert.getHours() ? "0" +
+                        timeconvert.getHours().toString() : timeconvert.getHours().toString()) + ":" +
+                    (timeconvert.getMinutes() % 10 == timeconvert.getMinutes() ? "0" +
+                        timeconvert.getMinutes().toString() : timeconvert.getMinutes().toString())
+                )
+            }
+
+            window.onload = GetvalueOrder();
+        </script>
+
+    </div>
+
+</body>
+
+</html>
